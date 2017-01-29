@@ -3,7 +3,7 @@ package com.renanpalmeira.spring.resource;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.hateoas.core.Relation;
 
-@Relation(collectionRelation = "timeline")
+@Relation(collectionRelation = "repository")
 public class Repository {   
     private String name;
     private String language;
