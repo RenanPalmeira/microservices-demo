@@ -2,6 +2,12 @@
 
 Demo to learn Spring HATEOAS with Spring BOOT (and the ecosystem of platform Spring)
 
+# Dependencies
+
+* Spring HATEOAS
+* Spring Cloud / Spring Boot
+* Retrofit
+
 # Endpoint's
 
 * projects
