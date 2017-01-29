@@ -4,10 +4,7 @@ import java.util.*;
 import java.io.IOException;
 
 import org.springframework.hateoas.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +15,7 @@ import com.renanpalmeira.spring.repository.GithubRepository;
 @RestController
 public class TimelineController {
 
-    @RequestMapping("/projects")
+    @RequestMapping(value = "/projects", produces = MediaType.APPLICATION_JSON_VALUE)
     Resources<Resource> getProjects() throws IOException {
 
         GithubRepository github = new GithubRepository();
@@ -40,7 +37,7 @@ public class TimelineController {
     /**
      * @see http://stackoverflow.com/questions/25858698/spring-hateoas-embedded-resource-support
      */
-    @RequestMapping("/timelines")
+    @RequestMapping(value = "/timelines", produces = MediaType.APPLICATION_JSON_VALUE)
     Resources<Resource<Timeline>> getAllTimeline() {
 
         Timeline firstTimeline = new Timeline("Step 1");
