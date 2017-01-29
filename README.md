@@ -15,7 +15,7 @@ Demo to learn Spring HATEOAS with Spring BOOT (and the ecosystem of platform Spr
 ```
 {
     "_embedded": {
-        "repositoryList": [
+        "repository": [
             {
                 "_links": {
                     "self": {
