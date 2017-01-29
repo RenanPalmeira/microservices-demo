@@ -1,0 +1,6 @@
+{
+  "name": "Spring Demo",
+  "description": "Demo to learn Spring HATEOAS with Spring BOOT (and the ecosystem of platform Spring)",
+  "repository": "https://github.com/RenanPalmeira/spring-demo",
+  "image": "heroku/java"
+}
