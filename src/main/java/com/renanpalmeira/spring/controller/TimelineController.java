@@ -24,7 +24,7 @@ public class TimelineController {
         List<Resource> resources = new ArrayList<Resource>();
 
         for(Repository repo : repos) {
-            resources.add(new Resource<Repository>(repo, new Link(repo.getUrl())));
+            resources.add(new Resource<Repository>(repo, new Link(repo.getHtmlUrl())));
         }
 
         Link link = new Link("http://example.com/products/1");

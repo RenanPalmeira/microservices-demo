@@ -1,28 +1,28 @@
 package com.renanpalmeira.spring.resource;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import org.springframework.hateoas.core.Relation;
 
+@ToString
 @Relation(collectionRelation = "repository")
-public class Repository {   
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Repository {
+    @Getter
+    @Setter
     private String name;
+
+    @Getter
+    @Setter
     private String language;
-    private String html_url;
-    
-    public Repository(String name) {
-        this.name = name;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    @JsonIgnore
-    public String getUrl() {
-        return html_url;
-    }
+    @Getter
+    @JsonProperty("html_url")
+    private String htmlUrl;
 }
