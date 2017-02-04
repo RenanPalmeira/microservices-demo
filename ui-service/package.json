@@ -1,0 +1,12 @@
+{
+  "name": "ui-service",
+  "version": "1.0.0",
+  "description": "UI to Spring Demo",
+  "main": "index.js",
+  "repository": "https://github.com/renanpalmeira/spring-demo",
+  "author": "Renan Palmeira",
+  "license": "MIT",
+  "dependencies": {
+    "rx": "^4.1.0"
+  }
+}

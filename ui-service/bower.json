@@ -1,0 +1,17 @@
+{
+  "name": "ui-service",
+  "description": "UI to Spring Demo",
+  "main": "index.js",
+  "authors": [
+    "Renan Palmeira"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/RenanPalmeira/spring-demo",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
