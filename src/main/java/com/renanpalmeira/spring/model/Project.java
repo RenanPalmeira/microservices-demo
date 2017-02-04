@@ -1,4 +1,4 @@
-package com.renanpalmeira.spring.resource;
+package com.renanpalmeira.spring.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,12 +8,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import org.springframework.hateoas.core.Relation;
-
 @ToString
-@Relation(collectionRelation = "repository")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Repository {
+public class Project {
+    @Getter
+    @Setter
+    private Long id;
+
     @Getter
     @Setter
     private String name;
