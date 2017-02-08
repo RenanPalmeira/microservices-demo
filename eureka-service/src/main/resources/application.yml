@@ -1,0 +1,19 @@
+server:
+ port: 8761
+
+eureka:
+  dashboard:
+    enabled: true
+  instance:
+    hostname: localhost
+  client:
+    healthcheck:
+      enabled: true
+    enableSelfPreservation: false
+    registerWithEureka: false
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
+      renewalPercentThreshold: 0.49
