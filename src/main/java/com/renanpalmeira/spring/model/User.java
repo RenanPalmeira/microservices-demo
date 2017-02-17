@@ -9,20 +9,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Project {
-    @Getter
-    @Setter
-    private Long id;
-
+public class User {
     @Getter
     @Setter
     private String name;
 
     @Getter
-    @Setter
-    private String language;
-
-    @Getter
-    @JsonProperty("html_url")
-    private String htmlUrl;
+    @JsonProperty("repos_url")
+    private String reposUrl;
 }
