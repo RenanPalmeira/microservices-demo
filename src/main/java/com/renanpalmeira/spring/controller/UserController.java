@@ -5,6 +5,9 @@ import java.io.IOException;
 
 import org.springframework.hateoas.*;
 import org.springframework.http.MediaType;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -24,7 +27,7 @@ public class UserController {
     private UserResourceAssembler assembler = new UserResourceAssembler();
 
     @RequestMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
-    Resource<UserResource> getUser() throws IOException {
+    public HttpEntity<UserResource> getUser() throws IOException {
 
         /**
          * @see http://docs.spring.io/autorepo/docs/spring-hateoas/0.20.x/reference/html/#fundamentals.resource-assembler
@@ -33,8 +36,6 @@ public class UserController {
 
         UserResource resource = this.assembler.toResource(user);
 
-        return new Resource<UserResource>(
-            resource
-        );
+        return new ResponseEntity(resource, HttpStatus.OK);
     }
 }
