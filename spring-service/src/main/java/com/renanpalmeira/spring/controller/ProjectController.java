@@ -18,7 +18,9 @@ import com.renanpalmeira.spring.resource.ProjectResourceAssembler;
 @RestController
 public class ProjectController {
 
-    private ProjectService projectService = new ProjectService();
+    @Autowired
+    private ProjectService projectService;
+
     private ProjectResourceAssembler assembler = new ProjectResourceAssembler();
 
     /**

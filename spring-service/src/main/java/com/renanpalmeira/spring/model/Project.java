@@ -24,6 +24,7 @@ public class Project {
     private String language;
 
     @Getter
+    @Setter
     @JsonProperty("html_url")
     private String htmlUrl;
 }
