@@ -3,22 +3,17 @@ package com.renanpalmeira.naivebayes;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import com.renanpalmeira.naivebayes.service.NaivebayesService;
+import com.renanpalmeira.naivebayes.simple.service.SimpleNaivebayesService;
 
 @SpringBootApplication
 public class NaivebayesApplication implements CommandLineRunner {
 
-    @Autowired
-    private NaivebayesService naivebayesService;
-
     @Override
     public void run(String... args) {
-        System.out.println(this.naivebayesService.getHelloMessage());
-        // if (args.length > 0 && args[0].equals("exitcode")) {
-        // throw new ExitException();
-        // }
+        SimpleNaivebayesService twitterCategorizer = new SimpleNaivebayesService();
+        twitterCategorizer.trainModel();
+        twitterCategorizer.classifyNewTweet("Calça");
     }
 
 	public static void main(String[] args) {
