@@ -18,13 +18,15 @@ import opennlp.tools.util.MarkableFileInputStreamFactory;
 import opennlp.tools.util.InputStreamFactory;
 import opennlp.tools.util.TrainingParameters;
 
+import com.renanpalmeira.naivebayes.ProductCategory;
+
 public class SimpleNaivebayesService {
 
     DoccatModel model;
 
     public void trainModel() {
         try {
-            InputStreamFactory inputStreamFactory = new MarkableFileInputStreamFactory(new File("input/tweets.txt"));
+            InputStreamFactory inputStreamFactory = new MarkableFileInputStreamFactory(new File("input/products.txt"));
             ObjectStream<String> lineStream = new PlainTextByLineStream(inputStreamFactory, "UTF-8");
 
             ObjectStream<DocumentSample> sampleStream = new DocumentSampleStream(lineStream);
@@ -40,19 +42,24 @@ public class SimpleNaivebayesService {
         }
     }
 
-    public void classifyNewTweet(String tweet) {
-        DocumentCategorizerME myCategorizer = new DocumentCategorizerME(model);
+    public void classify(String tweet) {
+        DocumentCategorizerME categorizer = new DocumentCategorizerME(model);
 
-        double[] outcomes = myCategorizer.categorize(tweet);
+        double[] outcomes = categorizer.categorize(tweet);
 
-        String category = myCategorizer.getBestCategory(outcomes);
+        String category = categorizer.getBestCategory(outcomes);
 
-        System.out.println(category);
-
-        if (category.equalsIgnoreCase("2")) {
-            System.out.println("The tweet is positive :) ");
-        } else {
-            System.out.println("The tweet is negative :( ");
+        if (category.equalsIgnoreCase(ProductCategory.TONER.getClassify()))
+        {
+            System.out.println("This product is a toner");
+        }
+        else if (category.equalsIgnoreCase(ProductCategory.PANTS.getClassify()))
+        {
+            System.out.println("This product is a pant");
+        }
+        else
+        {
+            System.out.println("This product is not a product");
         }
     }
 }

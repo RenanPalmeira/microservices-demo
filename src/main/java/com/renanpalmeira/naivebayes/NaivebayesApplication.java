@@ -11,9 +11,9 @@ public class NaivebayesApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        SimpleNaivebayesService twitterCategorizer = new SimpleNaivebayesService();
-        twitterCategorizer.trainModel();
-        twitterCategorizer.classifyNewTweet("Calça");
+        SimpleNaivebayesService naivebayes = new SimpleNaivebayesService();
+        naivebayes.trainModel();
+        naivebayes.classify("Calça");
     }
 
 	public static void main(String[] args) {
