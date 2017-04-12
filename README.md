@@ -1,46 +1,19 @@
 # spring-demo
 
-Demo to learn Spring HATEOAS with Spring BOOT (and the ecosystem of platform Spring)
+Example the microservice's between Java and Python
 
 # Dependencies
 
-* Spring HATEOAS
-* Spring Cloud / Spring Boot
-* Retrofit
+* Java
+    * Spring Cloud / Spring Boot
+    * graphql-spring-boot-starter
+    * Feign
+    * Hystrix
 
-# Endpoint's
+* Python 3
+    * Tornado
+    * Orator
+    * halogen
 
-* projects
+# Demo
 
-```
-{
-    "_embedded": {
-        "repository": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "https://github.com/octocat/git-consortium"
-                    }
-                }, 
-                "language": null, 
-                "name": "git-consortium"
-            }, 
-            {
-                "_links": {
-                    "self": {
-                        "href": "https://github.com/octocat/hello-worId"
-                    }
-                }, 
-                "language": null, 
-                "name": "hello-worId"
-            }
-            // ...
-        ]
-    }, 
-    "_links": {
-        "self": {
-            "href": "http://example.com/products/1"
-        }
-    }
-}
-```

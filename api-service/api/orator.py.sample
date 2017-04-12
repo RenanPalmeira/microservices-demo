@@ -1,0 +1,6 @@
+DATABASES = {
+    'api': {
+        'driver': 'sqlite',
+        'database': 'PATH HERE'
+    }
+}
