@@ -9,11 +9,13 @@ import tornado.ioloop
 from api.app import ApiService
 
 class Command:
+    port = 8081
+
     def runserver(self):
-        print('* Server listen in http://localhost:8080')
+        print('* Server listen in http://localhost:' + str(self.port))
         app = ApiService()
         http_server = tornado.httpserver.HTTPServer(app)
-        http_server.listen(8080)
+        http_server.listen(self.port)
         tornado.ioloop.IOLoop.instance().start()
 
 if __name__ == '__main__':

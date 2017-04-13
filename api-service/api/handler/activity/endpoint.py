@@ -10,6 +10,6 @@ class ActivityHandler(APIHandler):
     Hello!
     """
     def get(self):
-        return self.write(
-            Activity.serialize(Activity.find(1))
-        )
+        activity = Activity.serialize(Activity.find(1))
+
+        return self.write(activity)
