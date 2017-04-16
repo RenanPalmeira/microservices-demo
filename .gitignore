@@ -3,6 +3,11 @@
 target/
 api-service/api/orator.py
 !.mvn/wrapper/maven-wrapper.jar
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
 
 ### VirtualEnv ###
 # Virtualenv

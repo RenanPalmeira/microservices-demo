@@ -1,1 +1,0 @@
-from .ActivityResource import ActivityResource

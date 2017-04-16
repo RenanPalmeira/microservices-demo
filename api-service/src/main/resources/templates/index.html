@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Finance</title>
+    </head>
+    <body>
+        {{#transactions}}
+            {{description}}
+        {{/transactions}}
+        {{^transactions.length}}
+            <p>No transactions</p>
+        {{/transactions.length}}
+    </body>
+</html>
