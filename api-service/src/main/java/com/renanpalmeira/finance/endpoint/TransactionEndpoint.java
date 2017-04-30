@@ -38,10 +38,6 @@ public class TransactionEndpoint {
         items.add("Netflix");
         items.add("Spotify");
 
-        Observable.from(items).filter(label -> {
-            return label == "Netflix";
-        })
-
         return new Resources(items);
     }
 }
