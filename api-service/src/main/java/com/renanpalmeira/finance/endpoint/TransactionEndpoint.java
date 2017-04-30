@@ -29,4 +29,19 @@ public class TransactionEndpoint {
     Resources<TransactionResource> getTransactions() {
         return new Resources(assembler.toResources(repository.findAll()));
     }
+
+    @RequestMapping(value="/rx", method = RequestMethod.GET)
+    @ResponseBody
+    Resources<List> getItemsRx() {
+
+        List<String> items = new ArrayList<>();
+        items.add("Netflix");
+        items.add("Spotify");
+
+        Observable.from(items).filter(label -> {
+            return label == "Netflix";
+        })
+
+        return new Resources(items);
+    }
 }
