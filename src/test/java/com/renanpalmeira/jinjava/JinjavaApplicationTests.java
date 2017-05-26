@@ -1,4 +1,4 @@
-package com.renanpalmeira.naivebayes;
+package com.renanpalmeira.jinjava;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class NaivebayesApplicationTests {
+public class JinjavaApplicationTests {
 
 	@Test
 	public void contextLoads() {
