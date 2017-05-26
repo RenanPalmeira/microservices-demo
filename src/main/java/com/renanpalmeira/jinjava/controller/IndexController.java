@@ -20,9 +20,14 @@ public class IndexController {
     @ResponseBody
     String index() throws IOException {
 
-        String token = "";
-        String template = "<div>Hello, {{ title }}!</div>";
-        String params = "";
+        String token = ""; // if exists
+        String params = ""; // if exists
+
+        /**
+         * entity.field
+         * the entities are written in domain.GithubEndpoints
+         */
+        String template = "<div>Hello, {{ user.name }}!</div>";
 
         Map<String, Object> variables = renderService.getVariables(token, params, template);
 

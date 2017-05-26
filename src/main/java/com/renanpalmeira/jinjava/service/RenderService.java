@@ -23,7 +23,7 @@ public class RenderService {
     @Autowired
     private IdentityEntitiesTemplateUtility templateEntityHelper;
 
-    private final static String BASE_URL = "https://api.github.com/;
+    private final static String BASE_URL = "https://api.github.com/";
 
     public Map<String, Object> getVariables(String token, String params, String template) throws IOException {
 
@@ -42,7 +42,7 @@ public class RenderService {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(JacksonConverterFactory.create())
-                .client(client)
+                // .client(client)
                 .build();
 
         GithubClient endpoint = retrofit.create(GithubClient.class);
@@ -54,7 +54,14 @@ public class RenderService {
         Arrays.stream(GithubEndpoints.values())
                 .filter(entity -> entities.contains(entity.toString()))
                 .forEach(item -> {
-                    Call<Object> request = endpoint.getEndpoint(item.getUrl() + "?" + params);
+                    String url = item.getUrl();
+
+                    if(params != null && !params.isEmpty())
+                    {
+                        url.concat(params);
+                    }
+
+                    Call<Object> request = endpoint.getEndpoint(url);
 
                     Object response = null;
                     try {

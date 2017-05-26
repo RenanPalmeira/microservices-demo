@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
-public class GithubEndpoints {
-    USER("/users/list/");
+public enum GithubEndpoints {
+    USER("/users/renanpalmeira");
 
     @Getter
     private String url = null;
